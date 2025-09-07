@@ -1,7 +1,20 @@
-# Variables for lab-04-s3-static-website
+# variables.tf
 
 variable "aws_region" {
-  description = "AWS region to deploy resources into"
+  description = "Primary AWS region for the static website bucket"
   type        = string
-  default     = "us-east-1"
+  default     = "eu-west-1"
 }
+
+variable "dr_region" {
+  description = "Secondary AWS region for disaster recovery replication"
+  type        = string
+  default     = "us-west-2"
+}
+
+variable "project_prefix" {
+  description = "Prefix used for naming resources (must be globally unique for S3 buckets)"
+  type        = string
+  default     = "cafe-pr0jeeu-2025-aws-academy"
+}
+
